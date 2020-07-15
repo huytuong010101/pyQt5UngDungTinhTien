@@ -51,9 +51,9 @@ class Ui_MainWindow(object):
         self.trongRangNum = QtWidgets.QSpinBox(self.groupBox_2)
         self.trongRangNum.setGeometry(QtCore.QRect(170, 120, 42, 22))
         self.trongRangNum.setObjectName("trongRangNum")
-        self.nienRangCb = QtWidgets.QCheckBox(self.groupBox_2)
-        self.nienRangCb.setGeometry(QtCore.QRect(190, 30, 70, 17))
-        self.nienRangCb.setObjectName("nienRangCb")
+        self.niengRangCb = QtWidgets.QCheckBox(self.groupBox_2)
+        self.niengRangCb.setGeometry(QtCore.QRect(190, 30, 70, 17))
+        self.niengRangCb.setObjectName("niengRangCb")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
         self.label_3.setGeometry(QtCore.QRect(80, 120, 61, 16))
         self.label_3.setObjectName("label_3")
@@ -99,7 +99,7 @@ class Ui_MainWindow(object):
         self.sex.setItemText(1, _translate("MainWindow", "Nữ"))
         self.label_4.setText(_translate("MainWindow", "Họ và tên"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Dịch vụ"))
-        self.nienRangCb.setText(_translate("MainWindow", "Niền răng"))
+        self.niengRangCb.setText(_translate("MainWindow", "Niền răng"))
         self.label_3.setText(_translate("MainWindow", "Trồng răng"))
         self.tayTrangCb.setText(_translate("MainWindow", "Tẩy trắng"))
         self.label_2.setText(_translate("MainWindow", "Nhổ răng"))
@@ -109,12 +109,12 @@ class Ui_MainWindow(object):
     def calcTotal(self):
         prices = {
             "tayTrang": 100000,
-            "nienRang": 200000,
+            "niengRang": 200000,
             "nhoRang": 50000,
             "trongRang": 500000,
         }
         sum = (0 if self.tayTrangCb.checkState() == 0 else prices["tayTrang"]) \
-            + (0 if self.nienRangCb.checkState() == 0 else prices["nienRang"]) \
+            + (0 if self.niengRangCb.checkState() == 0 else prices["niengRang"]) \
             + int(self.nhoRangNum.text()) * prices["nhoRang"] \
             + int(self.trongRangNum.text()) * prices["trongRang"]
         self.total.setText(str(sum))
